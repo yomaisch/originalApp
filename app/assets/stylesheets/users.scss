@@ -1,0 +1,104 @@
+/* ========ユーザーログイン画面======== */
+.login_main {
+	width: 100%;
+	height: auto;
+	display: flex;
+	font-family: 'Noto Sans JP', sans-serif;
+	background-color: white;
+	margin-top: 72px;
+}
+
+.login_submit, .new_submit {
+	border-radius: 11px;
+  	font-size: 13pt;
+  	text-align: center;
+  	cursor: pointer;
+  	padding: 13px 55px;
+  	background: #ff7f00;
+  	color: #ffffff;
+  	line-height: 1em;
+  	transition: .3s;
+  	text-align: center;
+}
+
+.login_container {
+	width: 90%;
+	height: auto;
+}
+
+.login_form_signUp {
+    margin: 0 auto;
+    background-color: #c70000;
+	line-height: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 0 #a40004;
+    font-size: 1.1rem;
+    padding: 30px 80px;
+    position: relative;
+    width: 83px;
+	height: 30px;
+}
+
+.login_form_signUp a {
+	color: white;
+	text-align: center;
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 73%;
+    font-size: 16px;
+    padding-top: 28px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* ========ユーザー新規登録画面======== */
+.signup_main, .confirm_main {
+	width: 100%;
+	height: auto;
+	text-align: center;
+	font-family: 'Noto Sans JP', sans-serif;
+	margin-top: 60px;
+}
+
+.signup_container, .confirm_container {
+	width: 80%;
+	margin: 0 auto;
+	height: auto;
+}
+/* ========ユーザー管理画面======== */
+
+.time_line_body {
+	width: 90%;
+	height: 260px;
+	margin-top: 38px;
+}
+
+.time_line_image {
+	width: 600px;
+	height: 250px;
+	background-color: gray;
+}
+
+.likes {
+	float: right;
+}
+
+.menu_bar_header {
+	font-size: 21px;
+}
+
+.menu_bar_header h4 {
+	color: #353533;
+}
+
+.m_box a {
+	position: absolute;
+    top: 18px;
+    left: 1px;
+    width: 100%;
+    height: 100%;
+    font-size: 17px;
+    color: #323131;
+    letter-spacing: 2px;
+}

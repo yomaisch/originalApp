@@ -1,0 +1,26 @@
+/* ========メイン（Top Page）======== */
+.top_image {
+	position: relative;
+}
+
+.top_signUp {
+	background-color: #c70000;
+	line-height: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 0 #a40004;
+    font-size: 1.1rem;
+    padding: 30px 80px;
+    position: relative;
+    width: 130px;
+	height: 44px;
+}
+
+.top_about {
+	width: 100%;
+	height: auto;
+	text-align: center;
+	margin-top: 60px;
+	font-family: 'Noto Sans JP', sans-serif;
+	letter-spacing: 2px;
+}
+

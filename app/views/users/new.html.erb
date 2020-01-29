@@ -1,0 +1,80 @@
+<header class="at_logout_header">
+    <div class="head_top">
+    </div>
+    <div class="head_bottom">
+        <div class="head_bottom_container">
+            <div class="header_logo">
+              	<%= link_to "/" do %>
+                	<img src="/logo.png" alt="logo">
+              	<% end %>
+            </div>
+            <div class="header_login">
+            	<div class="login_image">
+        			<img src="/lock.png">
+      			</div>
+              	<ul class="header_menus">
+                	<li><%= link_to("ログイン", "/login")%></li>
+             	</ul>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="signup_main">
+	<div class="signup_container">
+		<% @user.errors.full_messages.each do |message|%>
+			<div class="form-error">
+	        	<%= message %>
+	        </div>
+        <% end %>
+        <%= form_for(@user, url:users_confirm_path) do |f| %>
+		<table class="signup_table">
+			<div class="at_login_header">
+				<h2>新規登録</h2>
+			</div>
+				<tbody>
+					<tr>
+						<th>姓</th>
+						<td>
+							<%= f.text_field :last_name, :placeholder => "姓", :class => 'new_input' %>
+						</td>
+					</tr>
+					<tr>
+						<th>名</th>
+						<td>
+							<%= f.text_field :first_name, :placeholder => "名", :class => 'new_input' %>
+						</td>
+					</tr>
+					<tr>
+						<th>姓（カナ）</th>
+						<td>
+							<%= f.text_field :last_name_kana, :placeholder => "姓（カナ）", :class => 'new_input' %>
+						</td>
+					</tr>
+					<tr>
+						<th>名（カナ）</th>
+						<td>
+							<%= f.text_field :first_name_kana, :placeholder => "名（カナ）", :class => 'new_input' %>
+						</td>
+					</tr>
+					<tr>
+						<th>メールアドレス</th>
+						<td>
+							<%= f.email_field :email, :placeholder => "メールアドレス", :class => 'new_input' %>
+						</td>
+					</tr>
+					<tr>
+						<th>パスワード</th>
+						<td>
+							<%= f.password_field :password, :class => 'new_input', :placeholder => "パスワード" %>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<%= f.submit "確認画面へ", :class => 'new_submit'%>
+						</td>
+					</tr>
+				</tbody>
+		</table>
+		<% end%>
+	</div>
+</main>

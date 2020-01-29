@@ -1,0 +1,70 @@
+<header class="at_logout_header">
+    <div class="head_top">
+    </div>
+    <div class="head_bottom">
+        <div class="head_bottom_container">
+            <div class="header_logo">
+            <%= link_to "/" do %>
+                <img src="/logo.png" alt="logo">
+            <% end %>
+            </div>
+            <div class="header_login">
+            	<div class="login_image">
+        			<img src="/lock.png">
+      			</div>
+              	<ul class="header_menus">
+                	<li><%= link_to("ログイン", "/login")%></li>
+              	</ul>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="login_main">
+	<div class="login">
+		<% if @error_message %>
+        <div class="form-error">
+            <%= @error_message %>
+        </div>
+        <% end %>
+		<div class="login_container">
+			<%= form_tag("/login") do %>
+			<table class="login_table">
+				<div class="at_login_header">
+					<h2>すでに登録済の方</h2>
+				</div>
+					<tbody>
+						<tr>
+							<th>メールアドレス</th>
+							<td>
+								<input class="login_input" name="email" value="<%= @email %>" placeholder="メールアドレス">
+							</td>
+						</tr>
+						<tr>
+							<th>パスワード</th>
+							<td>
+								<input class="login_input" type="password" name="password" value="<%= @password %>" placeholder="パスワード">
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="text-align: center;">
+								<input class="login_submit" type="submit" value="ログイン">
+							</td>
+						</tr>
+					</tbody>
+			</table>
+			<% end %>
+		</div>
+	</div>
+	<div class="user_new">
+		<div class="user_new_container">
+			<div class="user_new_title">
+				<div class="at_login_header">
+					<h2>まだ登録がお済みでない方</h2>
+				</div>
+				<div class="login_form_signUp">
+					<%= link_to("新規登録", "/signup")%>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
