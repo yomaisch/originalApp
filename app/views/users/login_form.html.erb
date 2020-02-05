@@ -1,12 +1,11 @@
 <header class="at_logout_header">
-    <div class="head_top">
-    </div>
+    <div class="head_top"></div>
     <div class="head_bottom">
         <div class="head_bottom_container">
             <div class="header_logo">
-            <%= link_to "/" do %>
-                <img src="/logo.png" alt="logo">
-            <% end %>
+	            <%= link_to "/" do %>
+	                <img src="/logo.png" alt="logo">
+	            <% end %>
             </div>
             <div class="header_login">
             	<div class="login_image">
@@ -22,9 +21,9 @@
 <main class="login_main">
 	<div class="login">
 		<% if @error_message %>
-        <div class="form-error">
-            <%= @error_message %>
-        </div>
+	        <div class="form-error">
+	            <%= @error_message %>
+	        </div>
         <% end %>
 		<div class="login_container">
 			<%= form_tag("/login") do %>

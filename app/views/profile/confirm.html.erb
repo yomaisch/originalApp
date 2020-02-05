@@ -1,29 +1,29 @@
 <header class="at_login_header">
-      <div class="head_top">
-        <div class="logout">
-          <div class="logout_image">
-            <img src="/logout.png">
-          </div>
-          <div class="logout_link">
-            <%= link_to("ログアウト", "/logout", {method: :post})%>
-          </div>
-        </div>
+  <div class="head_top">
+    <div class="logout">
+      <div class="logout_image">
+        <img src="/logout.png">
       </div>
-      <div class="at_login_head_bottom">
-        <div class="at_login_header_logo">
-          <%= link_to "/users/#{@user.id}/index" do %>
-              <img src="/logo.png" alt="logo">
-          <% end %>
-        </div>
-        <div class="user_info">
-          <% current_user = User.find_by(id: session[:user_id]) %>
-          <div class="user_icon">
-            <%= link_to "/profile/#{@user.id}" do %>
-              <img src="<%= "/user_icon_images/#{current_user.image_name}" %>">
-            <% end %>
-          </div>
-        </div>
+      <div class="logout_link">
+        <%= link_to("ログアウト", "/logout", {method: :post})%>
       </div>
+    </div>
+  </div>
+  <div class="at_login_head_bottom">
+    <div class="at_login_header_logo">
+      <%= link_to "/users/#{@user.id}/index" do %>
+        <img src="/logo.png" alt="logo">
+      <% end %>
+    </div>
+    <div class="user_info">
+      <% current_user = User.find_by(id: session[:user_id]) %>
+      <div class="user_icon">
+        <%= link_to "/profile/#{@user.id}" do %>
+          <img src="<%= "/user_icon_images/#{current_user.image_name}" %>">
+        <% end %>
+      </div>
+    </div>
+  </div>
 </header>
 <main class="at_login_main">
 	<div class="at_login_container">
@@ -46,28 +46,28 @@
 		</div>
 	</div>
   <div class="menu_bar">
-      <div class="appeal">
-          <div class="menu_bar_header">
-            <h4>アピール</h4>
-          </div>
-          <div class="menu_list">
-            <div class="regist m_box">
-                <%= link_to("アピールする", "/posts/#{@user.id}/new")%>
-            </div>
-          </div>
+    <div class="appeal">
+      <div class="menu_bar_header">
+        <h4>アピール</h4>
       </div>
-      <div class="profile">
-          <div class="menu_bar_header">
-            <h4>プロフィール</h4>
-          </div>
-          <div class="menu_list">
-            <div class="regist m_box">
-                <%= link_to("登録", "/profile/#{@user.id}/regist")%>
-            </div>
-            <div class="edit m_box">
-                <%= link_to("編集", "/profile/#{@user.id}/confirm")%>
-            </div>
-          </div>
+      <div class="menu_list">
+        <div class="regist m_box">
+          <%= link_to("アピールする", "/posts/#{@user.id}/new")%>
+        </div>
       </div>
+    </div>
+    <div class="profile">
+      <div class="menu_bar_header">
+        <h4>プロフィール</h4>
+      </div>
+      <div class="menu_list">
+        <div class="regist m_box">
+          <%= link_to("登録", "/profile/#{@user.id}/regist")%>
+        </div>
+        <div class="edit m_box">
+          <%= link_to("編集", "/profile/#{@user.id}/confirm")%>
+        </div>
+      </div>
+    </div>
     </div>
 </main>

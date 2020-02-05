@@ -1,23 +1,22 @@
 <header class="at_logout_header">
-  <div class="head_top">
-  </div>
-  <div class="head_bottom">
-    <div class="head_bottom_container">
-      <div class="header_logo">
-        <%= link_to "/" do %>
-          <img src="/logo.png" alt="logo">
-        <% end %>
-      </div>
-      <div class="header_login">
-      	<div class="login_image">
-        	<img src="/lock.png">
+	<div class="head_top"></div>
+  	<div class="head_bottom">
+    	<div class="head_bottom_container">
+      		<div class="header_logo">
+        		<%= link_to "/" do %>
+          			<img src="/logo.png" alt="logo">
+        		<% end %>
+      		</div>
+      	<div class="header_login">
+      		<div class="login_image">
+        		<img src="/lock.png">
+      		</div>
+        	<ul class="header_menus">
+          		<li><%= link_to("ログイン", "/login")%></li>
+        	</ul>
       	</div>
-        <ul class="header_menus">
-          <li><%= link_to("ログイン", "/login")%></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+    	</div>
+  	</div>
 </header>
 <main class="confirm_main">
 	<div class="confirm_container">
