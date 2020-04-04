@@ -12,41 +12,41 @@
   <div class="at_login_head_bottom">
     <div class="at_login_header_logo">
       <%= link_to "/users/#{@user.id}/index" do %>
-        <img src="/logo.png" alt="logo">
+      <img src="/logo.png" alt="logo">
       <% end %>
     </div>
     <div class="user_info">
       <% current_user = User.find_by(id: session[:user_id]) %>
       <div class="user_icon">
         <%= link_to "/profile/#{@user.id}" do %>
-          <img src="<%= "/user_icon_images/#{current_user.image_name}" %>">
+        <img src="<%= "/user_icon_images/#{current_user.image_name}" %>">
         <% end %>
       </div>
     </div>
   </div>
 </header>
 <main class="at_login_main">
-	<div class="posts_new_container at_login_container">
-		<div class="at_login_header">
-			<h2>アピール投稿</h2>
-		</div>
+  <div class="posts_new_container at_login_container">
+    <div class="at_login_header">
+      <h2>アピール投稿</h2>
+    </div>
     <%= form_tag("/posts/#{@user.id}/create") do %>
-  		<div class="posts_new_form">
-  			<div class="form_body">
-  				<div class="content_textarea">
-  					<textarea name="content" placeholder="アピール内容"><%= @post.content %></textarea>
-  				</div>
-  				<div class="github_url">
-  					<input type="text" name="url" placeholder="成果物を記載したURLを記載してください。例）https://github.com/〇〇">
-  				</div>
-  				<div class="posts_new_submit">
-  					<input type="submit" value="アピールする"　class="button">
-  				</div>
-  			</div>
-  		</div>
-		<% end%>
-	</div>
-	<div class="menu_bar">
+    <div class="posts_new_form">
+      <div class="form_body">
+        <div class="content_textarea">
+          <textarea name="content" placeholder="アピール内容"><%= @post.content %></textarea>
+        </div>
+        <div class="github_url">
+          <input type="text" name="url" placeholder="成果物を記載したURLを記載してください。例）https://github.com/〇〇">
+        </div>
+        <div class="posts_new_submit">
+          <input type="submit" value="アピールする" 　class="button">
+        </div>
+      </div>
+    </div>
+    <% end%>
+  </div>
+  <div class="menu_bar">
     <div class="appeal">
       <div class="menu_bar_header">
         <h4>アピール</h4>
