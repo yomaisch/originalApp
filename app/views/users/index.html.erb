@@ -12,63 +12,63 @@
   <div class="at_login_head_bottom">
     <div class="at_login_header_logo">
       <%= link_to "/users/#{@user.id}/index" do %>
-        <img src="/logo.png" alt="logo">
+      <img src="/logo.png" alt="logo">
       <% end %>
     </div>
     <div class="search">
       <%= form_tag({ :controller => 'posts', :action => 'search' }, {method: "get"}) do %>
-        <%= text_field_tag :search, "", {class: 'search_input'}%>
-        <%= submit_tag '検索', :name => nil, :class => "search_submit" %>
+      <%= text_field_tag :search, "", {class: 'search_input'}%>
+      <%= submit_tag '検索', :name => nil, :class => "search_submit" %>
       <% end %>
     </div>
     <div class="user_info">
       <% current_user = User.find_by(id: session[:user_id]) %>
       <div class="user_icon">
         <%= link_to "/profile/#{@user.id}" do %>
-          <img src="<%= "/user_icon_images/#{current_user.image_name}" %>">
+        <img src="<%= "/user_icon_images/#{current_user.image_name}" %>">
         <% end %>
       </div>
     </div>
   </div>
 </header>
 <main class="user_index_main">
-	<div class="time_line at_login_container">
-		<% @user_posts.each do |post| %>
-		<div class="time_line_body">
-			<div class="time_line_body_header">
-				<div class="user_time_line_image">
+  <div class="time_line at_login_container">
+    <% @user_posts.each do |post| %>
+    <div class="time_line_body">
+      <div class="time_line_body_header">
+        <div class="user_time_line_image">
           <%= link_to "/profile/#{post.id}" do %>
-				    <img src="<%= "/user_icon_images/#{post.user.image_name}" %>">
+          <img src="<%= "/user_icon_images/#{post.user.image_name}" %>">
           <% end %>
-				</div>
-				<div class="user_name">
-					<%= link_to(post.user.nickname, "/posts/#{post.id}") %>
-				</div>
-			</div>
-			<div class="time_line_content">
-				<%= post.content %>
-			</div>
-			<div class="time_line_url">
-				<%= post.url %>
-			</div>
+        </div>
+        <div class="user_name">
+          <%= link_to(post.user.nickname, "/posts/#{post.id}") %>
+        </div>
+      </div>
+      <div class="time_line_content">
+        <%= post.content %>
+      </div>
+      <div class="time_line_url">
+        <%= post.url %>
+      </div>
       <div class="likes">
         <% if Like.find_by(user_id: @current_user.id, post_id: post.id) %>
-          <%= link_to("/likes/#{post.id}/destroy", {method: "post"}) do %>
-            <i class="fas fa-heart"></i>
-          <% end %>
+        <%= link_to("/likes/#{post.id}/destroy", {method: "post"}) do %>
+        <i class="fas fa-heart"></i>
+        <% end %>
         <% else %>
-          <%= link_to("/likes/#{post.id}/create", {method: "post"}) do %>
-            <i class="far fa-heart"></i>
-          <% end %>
+        <%= link_to("/likes/#{post.id}/create", {method: "post"}) do %>
+        <i class="far fa-heart"></i>
+        <% end %>
         <% end %>
         <%= Like.where(post_id: post.id).count %>
       </div>
-		</div>
-		<hr>
-		<% end %>
-		<%= paginate @user_posts %>
-	</div>
-	<div class="menu_bar">
+    </div>
+    <hr>
+    <% end %>
+    <%= paginate @user_posts %>
+  </div>
+  <div class="menu_bar">
     <div class="appeal">
       <div class="menu_bar_header">
         <h4>アピール</h4>

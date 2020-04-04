@@ -12,39 +12,39 @@
   <div class="at_login_head_bottom">
     <div class="at_login_header_logo">
       <%= link_to "/users/#{@user.id}/index" do %>
-        <img src="/logo.png" alt="logo">
+      <img src="/logo.png" alt="logo">
       <% end %>
     </div>
     <div class="user_info">
       <% current_user = User.find_by(id: session[:user_id]) %>
       <div class="user_icon">
         <%= link_to "/profile/#{@user.id}" do %>
-          <img src="<%= "/user_icon_images/#{current_user.image_name}" %>">
+        <img src="<%= "/user_icon_images/#{current_user.image_name}" %>">
         <% end %>
       </div>
     </div>
   </div>
 </header>
 <main class="at_login_main">
-	<div class="at_login_container">
-		<div class="at_login_header">
-			<h2><%= @current_user.nickname %>さんのプロフィール</h2>
-		</div>
-		<div class="profile_body">
-			<div class="profile_icon_image">
-				<img src="<%= "/user_icon_images/#{@current_user.image_name}" %>">
-			</div>
-			<div class="user_nickname">
-				<%= @current_user.nickname %>
-			</div>
-			<div class="time_line_content">
-				<%= @current_user.introduction %>
-			</div>
-			<div class="edit_button">
-				<%= link_to("編集する", "/profile/#{@current_user.id}/edit")%>
-			</div>
-		</div>
-	</div>
+  <div class="at_login_container">
+    <div class="at_login_header">
+      <h2><%= @current_user.nickname %>さんのプロフィール</h2>
+    </div>
+    <div class="profile_body">
+      <div class="profile_icon_image">
+        <img src="<%= "/user_icon_images/#{@current_user.image_name}" %>">
+      </div>
+      <div class="user_nickname">
+        <%= @current_user.nickname %>
+      </div>
+      <div class="time_line_content">
+        <%= @current_user.introduction %>
+      </div>
+      <div class="edit_button">
+        <%= link_to("編集する", "/profile/#{@current_user.id}/edit")%>
+      </div>
+    </div>
+  </div>
   <div class="menu_bar">
     <div class="appeal">
       <div class="menu_bar_header">
@@ -69,5 +69,5 @@
         </div>
       </div>
     </div>
-    </div>
+  </div>
 </main>

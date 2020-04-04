@@ -1,87 +1,87 @@
 <header class="at_logout_header">
-	<div class="head_top"></div>
-  	<div class="head_bottom">
-    	<div class="head_bottom_container">
-      		<div class="header_logo">
-        		<%= link_to "/" do %>
-          			<img src="/logo.png" alt="logo">
-        		<% end %>
-      		</div>
-      	<div class="header_login">
-      		<div class="login_image">
-        		<img src="/lock.png">
-      		</div>
-        	<ul class="header_menus">
-          		<li><%= link_to("ログイン", "/login")%></li>
-        	</ul>
-      	</div>
-    	</div>
-  	</div>
+  <div class="head_top"></div>
+  <div class="head_bottom">
+    <div class="head_bottom_container">
+      <div class="header_logo">
+        <%= link_to "/" do %>
+        <img src="/logo.png" alt="logo">
+        <% end %>
+      </div>
+      <div class="header_login">
+        <div class="login_image">
+          <img src="/lock.png">
+        </div>
+        <ul class="header_menus">
+          <li><%= link_to("ログイン", "/login")%></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </header>
 <main class="confirm_main">
-	<div class="confirm_container">
-		<% @user.errors.full_messages.each do |message|%>
-			<div class="form-error">
-	        	<%= message %>
-	        </div>
-        <% end %>
-        <%= form_for(@user, url:users_create_path) do |f| %>
-		<table class="confirm_table">
-			<div class="at_login_header">
-				<h2>新規登録（入力内容の確認）</h2>
-			</div>
-				<tbody>
-					<tr>
-						<th>姓</th>
-						<td>
-							<%= @user.last_name %>
-							<%= f.hidden_field :last_name %>
-						</td>
-					</tr>
-					<tr>
-						<th>名</th>
-						<td>
-							<%= @user.first_name %>
-							<%= f.hidden_field :first_name %>
-						</td>
-					</tr>
-					<tr>
-						<th>姓（カナ）</th>
-						<td>
-							<%= @user.last_name_kana %>
-							<%= f.hidden_field :last_name_kana %>
-						</td>
-					</tr>
-					<tr>
-						<th>名（カナ）</th>
-						<td>
-							<%= @user.first_name_kana %>
-							<%= f.hidden_field :first_name_kana %>
-						</td>
-					</tr>
-					<tr>
-						<th>メールアドレス</th>
-						<td>
-							<%= @user.email %>
-							<%= f.hidden_field :email %>
-						</td>
-					</tr>
-					<tr>
-						<th>パスワード</th>
-						<td>
-							<p>*********</p>
-							<%= f.hidden_field :password %>
-							<%= f.hidden_field :image_name, :value => 'default_user.jpg' %>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<%= f.submit '入力画面に戻る', name: 'back', :class => 'back_submit' %>
-							<%= f.submit "新規登録", :class => 'new_submit'%>
-						</td>
-					</tr>
-				</tbody>
-		</table>
-		<% end%>
-	</div>
+  <div class="confirm_container">
+    <% @user.errors.full_messages.each do |message|%>
+    <div class="form-error">
+      <%= message %>
+    </div>
+    <% end %>
+    <%= form_for(@user, url:users_create_path) do |f| %>
+    <table class="confirm_table">
+      <div class="at_login_header">
+        <h2>新規登録（入力内容の確認）</h2>
+      </div>
+      <tbody>
+        <tr>
+          <th>姓</th>
+          <td>
+            <%= @user.last_name %>
+            <%= f.hidden_field :last_name %>
+          </td>
+        </tr>
+        <tr>
+          <th>名</th>
+          <td>
+            <%= @user.first_name %>
+            <%= f.hidden_field :first_name %>
+          </td>
+        </tr>
+        <tr>
+          <th>姓（カナ）</th>
+          <td>
+            <%= @user.last_name_kana %>
+            <%= f.hidden_field :last_name_kana %>
+          </td>
+        </tr>
+        <tr>
+          <th>名（カナ）</th>
+          <td>
+            <%= @user.first_name_kana %>
+            <%= f.hidden_field :first_name_kana %>
+          </td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td>
+            <%= @user.email %>
+            <%= f.hidden_field :email %>
+          </td>
+        </tr>
+        <tr>
+          <th>パスワード</th>
+          <td>
+            <p>*********</p>
+            <%= f.hidden_field :password %>
+            <%= f.hidden_field :image_name, :value => 'default_user.jpg' %>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <%= f.submit '入力画面に戻る', name: 'back', :class => 'back_submit' %>
+            <%= f.submit "新規登録", :class => 'new_submit'%>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <% end%>
+  </div>
 </main>
