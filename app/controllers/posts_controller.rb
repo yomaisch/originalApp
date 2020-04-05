@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   PER = 8
 
@@ -12,29 +14,28 @@ class PostsController < ApplicationController
   end
 
   def new
-  	@user = User.find_by(id: params[:id])
-  	@post = Post.new
+    @user = User.find_by(id: params[:id])
+    @post = Post.new
   end
 
   def create
-  	@user = User.find_by(id: params[:id])
-  	@post = Post.new(content: params[:content],
-  					url: params[:url],
-  					user_id: @current_user.id)
-  	if @post.save
-  		flash[:notice] = "アピールを投稿しました"
-  		redirect_to("/users/#{@user.id}/index")
-  	else
-  		render("posts/#{@user.id}/new")
-  	end
+    @user = User.find_by(id: params[:id])
+    @post = Post.new(content: params[:content],
+                     url: params[:url],
+                     user_id: @current_user.id)
+    if @post.save
+      flash[:notice] = 'アピールを投稿しました'
+      redirect_to("/users/#{@user.id}/index")
+    else
+      render("posts/#{@user.id}/new")
+    end
   end
 
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy
 
-    flash[:notice] = "投稿が削除されました"
+    flash[:notice] = '投稿が削除されました'
     redirect_to("/users/#{@current_user.id}/index")
   end
-
 end
