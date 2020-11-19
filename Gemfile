@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'pry-rails', '~> 0.3.9'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari', '~> 1.2.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'rails-i18n'
