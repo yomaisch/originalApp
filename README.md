@@ -1,24 +1,41 @@
-# README
+# FORIO
+「未経験からエンジニアに転職しようとポートフォリオを作成したものの、エントリーした企業以外にも見てもらい、幅広くご縁をもらいたい！」という自分自身の悩みに対して、<br>
+企業と求職者が存在し、且つポートフォリオをベースにコミュニケーション可能なプラットフォームを提供し、広くご縁をもらうという悩みを解決するサービスです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 実装機能
+## タイムライン関連
+- 投稿機能
+- 一覧表示機能
+- 詳細表示機能
+- 自分の投稿の削除機能
+- 自分の投稿の編集機能
+- キーワード検索機能
+- いいね機能
 
-Things you may want to cover:
+## ユーザー関連
+- 登録機能
+- プロフィール編集機能
+- ログイン・アウト機能
 
-* Ruby version
+<!-- # DEMO
+"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる -->
 
-* System dependencies
+# 開発環境
+## OS
+- MacOS Catalina v10.15.6
 
-* Configuration
+## 言語やフレームワーク
+- Ruby v2.5.0
+- Ruby on Rails v5.2.4
 
-* Database creation
+<!-- # Usage
+DEMOの実行方法など、"hoge"の基本的な使い方を説明する
 
-* Database initialization
+```bash
+git clone https://github.com/hoge/~
+cd examples
+python demo.py
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Note
+注意点などがあれば書く -->
